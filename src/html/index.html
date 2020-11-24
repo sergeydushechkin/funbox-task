@@ -10,25 +10,57 @@
 <body>
   <div id="root">
     <div class="container">
-      <main class="main">
-        <section class="main__cards cards">
-          <h1 class="cards__header header">Ты сегодня покормил кота?</h1>
+      <main class="main-page">
+        <section class="main-page__cards cards">
+          <h1 class="cards__title title">Ты сегодня покормил кота?</h1>
           <ul class="cards__list">
             <li class="cards__item">
               <article class="cards_card card">
-                <div class="">
-                  <p>Сказочное заморское яство</p>
-                  <h2>
-                    Нямушка
-                    <br>
-                    <sub>с фуа-гра</sub>
+                <div class="card__poster poster">
+                  <p class="poster__text">Сказочное заморское яство</p>
+                  <h2 class="poster__title">
+                    Нямушка <sub class="poster__subtitle">с фуа-гра</sub>
                   </h2>
-                  <p>0,5 <span>кг</span></p>
+                  <ul class="poster__consist consist">
+                    <li class="consist__list">10 порций</li>
+                    <li class="consist__list">мышь в подарок</li>
+                  </ul>
+                  <p class="poster__weight">0,5 <span class="poster__measure">кг</span></p>
                 </div>
-                <!-- <svg width="300" height="300" viewBox="0 0 100 100">
-                  <polygon points="10,0 100,0 100,100 0,100 0,10" fill="red" stroke-width="4" stroke-radius="5" stroke="orange"/>
-                </svg> -->
-                <p>Чего сидишь? Порадуй котэ, <a href="#">купи.</a></p>
+                <p class="card__status">Чего сидишь? Порадуй котэ, <a href="#">купи.</a></p>
+              </article>
+            </li>
+            <li class="cards__item">
+              <article class="cards_card card">
+                <div class="card__poster poster">
+                  <p class="poster__text">Сказочное заморское яство</p>
+                  <h2 class="poster__title">
+                    Нямушка <sub class="poster__subtitle">с рыбой</sub>
+                  </h2>
+                  <ul class="poster__consist consist">
+                    <li class="consist__list">40 порций</li>
+                    <li class="consist__list">2 мыши в подарок</li>
+                  </ul>
+                  <p class="poster__weight">2 <span class="poster__measure">кг</span></p>
+                </div>
+                <p class="card__status">Головы щучьи с чесноком да свежайшая сёмгушка.</a></p>
+              </article>
+            </li>
+            <li class="cards__item">
+              <article class="cards_card card">
+                <div class="card__poster poster">
+                  <p class="poster__text">Сказочное заморское яство</p>
+                  <h2 class="poster__title">
+                    Нямушка <sub class="poster__subtitle">с курой</sub>
+                  </h2>
+                  <ul class="poster__consist consist">
+                    <li class="consist__list">100 порций</li>
+                    <li class="consist__list">5 мышей в подарок</li>
+                    <li class="consist__list">заказчик доволен</li>
+                  </ul>
+                  <p class="poster__weight">5<span class="poster__measure">кг</span></p>
+                </div>
+                <p class="card__status">Печалька, с курой закончился.</a></p>
               </article>
             </li>
           </ul>
