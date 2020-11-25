@@ -1,6 +1,11 @@
 .cards__list {
-  display: flex;
-  justify-content: space-around;
+  @include resetlist;
 
-  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cards__title {
+  margin-top: 37px;
+  margin-bottom: 23px;
 }

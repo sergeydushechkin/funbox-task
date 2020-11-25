@@ -1,9 +1,8 @@
 .consist {
-  list-style: none;
+  @include resetlist;
 
   color: #666666;
   font-style: normal;
-  font-weight: bold;
   font-size: 14px;
   line-height: 16px;
 }

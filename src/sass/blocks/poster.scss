@@ -1,37 +1,57 @@
 .poster {
-  background-image: url("./img/border2.svg");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
+  position: relative;
+  min-height: 480px;
+  padding-top: 21px;
+  padding-left: 48px;
+
+  border-radius: 12px;
+
+  background-image: url("./img/photo.png"), url("./img/card-background.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: -24px 208px, center;
+  background-size: auto, 100% 100%;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background-image: url("./img/card-border.svg");
+    background-repeat: no-repeat;
+    background-size: auto;
+  }
 }
 
 .poster__text {
+  margin: 0;
+  margin-bottom: 6px;
   color: #666666;
   font-size: 16px;
   line-height: 19px;
 }
 
 .poster__title {
+  margin: 0;
   font-size: 48px;
-  line-height: 56px;
+  line-height: 54px;
   font-weight: bold;
 }
 
-.poster__subtitle {
+.poster__taste {
+  margin: 0;
+  margin-bottom: 14px;
   font-size: 24px;
   line-height: 28px;
+  font-weight: bold;
 }
 
 .poster__weight {
-  font-size: 42px;
-  line-height: 22px;
+  position: absolute;
 
-  text-align: center;
-
-  color: #ffffff;
-}
-
-.poster__measure {
-  font-size: 42px;
-  line-height: 22px;
+  right: 15px;
+  bottom: 15px;
 }
