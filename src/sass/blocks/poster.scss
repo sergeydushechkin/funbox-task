@@ -1,5 +1,37 @@
 .poster {
   background-image: url("./img/border2.svg");
   background-repeat: no-repeat;
+  background-position: center;
   background-size: cover;
+}
+
+.poster__text {
+  color: #666666;
+  font-size: 16px;
+  line-height: 19px;
+}
+
+.poster__title {
+  font-size: 48px;
+  line-height: 56px;
+  font-weight: bold;
+}
+
+.poster__subtitle {
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.poster__weight {
+  font-size: 42px;
+  line-height: 22px;
+
+  text-align: center;
+
+  color: #ffffff;
+}
+
+.poster__measure {
+  font-size: 42px;
+  line-height: 22px;
 }
