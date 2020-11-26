@@ -6,12 +6,29 @@
 
   border-radius: 12px;
 
-  background-image: url("./img/photo.png"), url("./img/card-background.svg");
-  background-repeat: no-repeat, no-repeat;
-  background-position: -24px 208px, center;
-  background-size: auto, 100% 100%;
+  background-image: url("./img/card-background.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
 
   cursor: pointer;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    width: 100%;
+    height: 100%;
+
+    border-radius: 12px;
+
+    background-image: url("./img/photo.png");
+    background-repeat: no-repeat;
+    background-position: -24px 208px;
+    background-size: auto;
+  }
 
   &::after {
     content: "";
@@ -24,14 +41,16 @@
 
     background-image: url("./img/card-border.svg");
     background-repeat: no-repeat;
-    background-size: auto;
+    background-size: 100% 100%;
   }
 
-  &:hover::after {
+  &:hover::after,
+  &:focus::after {
     background-image: url("./img/card-border-hover.svg");
   }
 
-  &:hover .poster__weight {
+  &:hover .poster__weight,
+  &:focus .poster__weight {
     background-color: #2ea8e6;
   }
 }
@@ -45,18 +64,39 @@
     background-color: #d91667;
   }
 
-  &:hover::after {
+  &:hover::after,
+  &:focus::after {
     background-image: url("./img/card-border-selected-hover.svg");
   }
 
-  &:hover .poster__weight {
+  &:hover .poster__weight,
+  &:focus .poster__weight {
     background-color: #e52e7a;
+  }
+
+  &:hover .poster__text,
+  &:focus .poster__text {
+    color: #e52e7a;
+  }
+
+  &:hover .poster__phrase1,
+  &:focus .poster__phrase1 {
+    display: none;
+  }
+
+  &:hover .poster__phrase2,
+  &:focus .poster__phrase2 {
+    display: block;
   }
 }
 
 .poster--disabled {
   cursor: auto;
-  background-image: url("./img/photo.png"), url("./img/card-background.svg");
+  background-image: url("./img/card-background.svg");
+
+  &::before {
+    opacity: 0.5;
+  }
 
   &::after {
     background-image: url("./img/card-border-disabled.svg");
@@ -66,13 +106,32 @@
     background-color: #b3b3b3;
   }
 
-  &:hover::after {
+  &:hover::after,
+  &:focus::after {
     background-image: url("./img/card-border-disabled.svg");
   }
 
-  &:hover .poster__weight {
+  &:hover .poster__weight,
+  &:focus .poster__weight {
     background-color: #b3b3b3;
   }
+
+  & .poster__content {
+    color: #b3b3b3;
+    opacity: 0.5;
+  }
+
+  & .poster__text {
+    color: #b3b3b3;
+  }
+
+  & .poster__consist {
+    color: #b3b3b3;
+  }
+}
+
+.poster__content {
+  position: relative;
 }
 
 .poster__text {
@@ -81,6 +140,10 @@
   color: #666666;
   font-size: 16px;
   line-height: 19px;
+}
+
+.poster__phrase2 {
+  display: none;
 }
 
 .poster__title {
