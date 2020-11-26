@@ -11,6 +11,8 @@
   background-position: -24px 208px, center;
   background-size: auto, 100% 100%;
 
+  cursor: pointer;
+
   &::after {
     content: "";
     position: absolute;
@@ -23,6 +25,53 @@
     background-image: url("./img/card-border.svg");
     background-repeat: no-repeat;
     background-size: auto;
+  }
+
+  &:hover::after {
+    background-image: url("./img/card-border-hover.svg");
+  }
+
+  &:hover .poster__weight {
+    background-color: #2ea8e6;
+  }
+}
+
+.poster--selected {
+  &::after {
+    background-image: url("./img/card-border-selected.svg");
+  }
+
+  & .poster__weight {
+    background-color: #d91667;
+  }
+
+  &:hover::after {
+    background-image: url("./img/card-border-selected-hover.svg");
+  }
+
+  &:hover .poster__weight {
+    background-color: #e52e7a;
+  }
+}
+
+.poster--disabled {
+  cursor: auto;
+  background-image: url("./img/photo.png"), url("./img/card-background.svg");
+
+  &::after {
+    background-image: url("./img/card-border-disabled.svg");
+  }
+
+  & .poster__weight {
+    background-color: #b3b3b3;
+  }
+
+  &:hover::after {
+    background-image: url("./img/card-border-disabled.svg");
+  }
+
+  &:hover .poster__weight {
+    background-color: #b3b3b3;
   }
 }
 
