@@ -28,6 +28,12 @@
     background-repeat: no-repeat;
     background-position: -24px 208px;
     background-size: auto;
+
+    @media (min-resolution: $retina-dpi),
+      (min-resolution: $retina-dppx) {
+      background-image: url("./img/photo@2x.png");
+      background-size: 116%;
+    }
   }
 
   &::after {

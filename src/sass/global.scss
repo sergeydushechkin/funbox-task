@@ -31,6 +31,11 @@ body {
   font-family: "Trebuchet MS", "Arial", sans-serif;
 
   background-image: url("./img/pattern.png");
+
+  @media (min-resolution: $retina-dpi),
+    (min-resolution: $retina-dppx) {
+    background-image: url("./img/pattern@2x.png");
+  }
 }
 
 @media (min-width: $desktop-width) {
