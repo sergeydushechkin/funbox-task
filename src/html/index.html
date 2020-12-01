@@ -9,91 +9,89 @@
 </head>
 <body>
   <div id="root">
-    <div class="container">
-      <main class="main-page">
-        <section class="main-page__cards cards">
-          <h1 class="cards__title title">Ты сегодня покормил кота?</h1>
-          <ul class="cards__list">
-            <li class="cards__item">
-              <article class="cards_card card">
-                <div class="card__poster poster" tabindex="1">
-                  <div class="poster__content">
-                    <p class="poster__text">
-                      <span class="poster__phrase1">Сказочное заморское яство</span>
-                      <span class="poster__phrase2">Котэ не одобряет?</span>
-                    </p>
-                    <h2 class="poster__title">
-                      Нямушка
-                    </h2>
-                    <p class="poster__taste">с фуа-гра</p>
-                    <ul class="poster__consist consist">
-                      <li class="consist__item"><b>10</b> порций</li>
-                      <li class="consist__item">мышь в подарок</li>
-                    </ul>
-                  </div>
-                  <div class="poster__weight weight">
-                    <span class="weight__value">0,5</span>
-                    <span class="weight__measure">кг</span>
-                  </div>
+    <main class="main-page">
+      <section class="main-page__cards cards">
+        <h1 class="cards__title title">Ты сегодня покормил кота?</h1>
+        <ul class="cards__list">
+          <li class="cards__item">
+            <article class="cards_card card">
+              <div class="card__poster poster poster--unselected" tabindex="1">
+                <div class="poster__content">
+                  <p class="poster__text">
+                    <span class="poster__phrase1">Сказочное заморское яство</span>
+                    <span class="poster__phrase2">Котэ не одобряет?</span>
+                  </p>
+                  <h2 class="poster__title">
+                    Нямушка
+                  </h2>
+                  <p class="poster__taste">с фуа-гра</p>
+                  <ul class="poster__consist consist">
+                    <li class="consist__item"><b>10</b> порций</li>
+                    <li class="consist__item">мышь в подарок</li>
+                  </ul>
                 </div>
-                <p class="card__status">Чего сидишь? Порадуй котэ, <a class="card__link" href="#">купи.</a></p>
-              </article>
-            </li>
-            <li class="cards__item">
-              <article class="cards_card card card--selected">
-                <div class="card__poster poster poster--selected" tabindex="1">
-                  <div class="poster__content">
-                    <p class="poster__text">
-                      <span class="poster__phrase1">Сказочное заморское яство</span>
-                      <span class="poster__phrase2">Котэ не одобряет?</span>
-                    </p>
-                    <h2 class="poster__title">
-                      Нямушка
-                    </h2>
-                    <p class="poster__taste">с рыбой</p>
-                    <ul class="poster__consist consist">
-                      <li class="consist__item"><b>40</b> порций</li>
-                      <li class="consist__item"><b>2</b> мыши в подарок</li>
-                    </ul>
-                  </div>
-                  <div class="poster__weight weight">
-                    <span class="weight__value">2</span>
-                    <span class="weight__measure">кг</span>
-                  </div>
+                <div class="poster__weight weight">
+                  <span class="weight__value">0,5</span>
+                  <span class="weight__measure">кг</span>
                 </div>
-                <p class="card__status">Головы щучьи с чесноком да свежайшая сёмгушка.</p>
-              </article>
-            </li>
-            <li class="cards__item">
-              <article class="cards_card card card--disabled">
-                <div class="card__poster poster poster--disabled">
-                  <div class="poster__content">
-                    <p class="poster__text">
-                      <span class="poster__phrase1">Сказочное заморское яство</span>
-                      <span class="poster__phrase2">Котэ не одобряет?</span>
-                    </p>
-                    <h2 class="poster__title">
-                      Нямушка
-                    </h2>
-                    <p class="poster__taste">с курой</p>
-                    <ul class="poster__consist consist">
-                      <li class="consist__item"><b>100</b> порций</li>
-                      <li class="consist__item"><b>5</b> мышей в подарок</li>
-                      <li class="consist__item">заказчик доволен</li>
-                    </ul>
-                  </div>
-                  <div class="poster__weight weight">
-                    <span class="weight__value">5</span>
-                    <span class="weight__measure">кг</span>
-                  </div>
+              </div>
+              <p class="card__status">Чего сидишь? Порадуй котэ, <a class="card__link" href="#">купи.</a></p>
+            </article>
+          </li>
+          <li class="cards__item">
+            <article class="cards_card card card--selected">
+              <div class="card__poster poster poster--selected" tabindex="1">
+                <div class="poster__content">
+                  <p class="poster__text">
+                    <span class="poster__phrase1">Сказочное заморское яство</span>
+                    <span class="poster__phrase2">Котэ не одобряет?</span>
+                  </p>
+                  <h2 class="poster__title">
+                    Нямушка
+                  </h2>
+                  <p class="poster__taste">с рыбой</p>
+                  <ul class="poster__consist consist">
+                    <li class="consist__item"><b>40</b> порций</li>
+                    <li class="consist__item"><b>2</b> мыши в подарок</li>
+                  </ul>
                 </div>
-                <p class="card__status card__status--not-available">Печалька, с курой закончился.</p>
-              </article>
-            </li>
-          </ul>
-        </section>
-      </main>
-    </div>
+                <div class="poster__weight weight">
+                  <span class="weight__value">2</span>
+                  <span class="weight__measure">кг</span>
+                </div>
+              </div>
+              <p class="card__status">Головы щучьи с чесноком да свежайшая сёмгушка.</p>
+            </article>
+          </li>
+          <li class="cards__item">
+            <article class="cards_card card card--disabled">
+              <div class="card__poster poster poster--disabled">
+                <div class="poster__content">
+                  <p class="poster__text">
+                    <span class="poster__phrase1">Сказочное заморское яство</span>
+                    <span class="poster__phrase2">Котэ не одобряет?</span>
+                  </p>
+                  <h2 class="poster__title">
+                    Нямушка
+                  </h2>
+                  <p class="poster__taste">с курой</p>
+                  <ul class="poster__consist consist">
+                    <li class="consist__item"><b>100</b> порций</li>
+                    <li class="consist__item"><b>5</b> мышей в подарок</li>
+                    <li class="consist__item">заказчик доволен</li>
+                  </ul>
+                </div>
+                <div class="poster__weight weight">
+                  <span class="weight__value">5</span>
+                  <span class="weight__measure">кг</span>
+                </div>
+              </div>
+              <p class="card__status card__status--not-available">Печалька, с курой закончился.</p>
+            </article>
+          </li>
+        </ul>
+      </section>
+    </main>
   </div>
   <!-- <script src="./bundle.js"></script> -->
 </body>
