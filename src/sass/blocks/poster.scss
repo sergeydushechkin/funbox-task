@@ -77,12 +77,12 @@
 
   &:hover .poster__weight,
   &:focus .poster__weight {
-    background-color: #e52e7a;
+    background-color: $col-selected-poster;
   }
 
   &:hover .poster__text,
   &:focus .poster__text {
-    color: #e52e7a;
+    color: $col-selected-poster;
   }
 
   &:hover .poster__phrase1,
@@ -119,20 +119,20 @@
 
   &:hover .poster__weight,
   &:focus .poster__weight {
-    background-color: #b3b3b3;
+    background-color: $col-disabled;
   }
 
   & .poster__content {
-    color: #b3b3b3;
+    color: $col-disabled;
     opacity: 0.5;
   }
 
   & .poster__text {
-    color: #b3b3b3;
+    color: $col-disabled;
   }
 
   & .poster__consist {
-    color: #b3b3b3;
+    color: $col-disabled;
   }
 }
 

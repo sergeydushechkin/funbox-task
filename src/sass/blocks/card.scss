@@ -18,7 +18,7 @@
 .card__link {
   position: relative;
 
-  color: #1698d9;
+  color: $col-light-blue;
   text-decoration: none;
 
   &::after {
@@ -30,7 +30,7 @@
     width: 27px;
     height: 1px;
 
-    background-image: linear-gradient(to right, #1698d9 0, #1698d9 3px, transparent 3px, transparent 6px);
+    background-image: linear-gradient(to right, $col-light-blue 0, $col-light-blue 3px, transparent 3px, transparent 6px);
     background-size: 5px 2px;
   }
 }
