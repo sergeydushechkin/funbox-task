@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Events</title>
+</head>
+<body>
+  <div class="area" style="
+    width: 200px;
+    height: 100px;
+    background-color: red;"
+    tabindex="1"
+  >
+  </div>
+  <textarea class="log" id="log" name="log"
+          rows="30" cols="33"
+          style="width: 100%;"
+  ></textarea>
+  <script>
+    function monitorEventsS(element, log) {
+      // var log = function(e) { console.log(e);};
+      var events = [];
+
+      for(var i in element) {
+        if(i.startsWith("on")) events.push(i.substr(2));
+      }
+      events.forEach(function(eventName) {
+        element.addEventListener(eventName, log);
+      });
+    }
+
+    function showEvent(el) {
+      return function(ev) {
+        var newString = ev.type
+          + " {"
+          + ev.screenX + ", "
+          + ev.screenY + ", "
+          + Math.round(ev.clientX) + ", "
+          + Math.round(ev.clientY) + ", "
+          + ev.pointerId + ", "
+          + ev.width + ", "
+          + ev.height
+          + "}"
+          + "\n";
+
+        el.value += newString
+        el.scrollTop = el.scrollHeight;
+      }
+    }
+
+    var areaElement = document.querySelector(".area");
+    var logElement = document.querySelector(".log");
+
+    monitorEventsS(areaElement, showEvent(logElement))
+  </script>
+</body>
+</html>
