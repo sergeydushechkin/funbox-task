@@ -45,9 +45,14 @@
     width: 100%;
     height: 100%;
 
-    background-image: url("./img/card-border.svg");
     background-repeat: no-repeat;
     background-size: 100% 100%;
+  }
+}
+
+.poster--unselected {
+  &::after {
+    background-image: url("./img/card-border.svg");
   }
 
   &:hover::after,
@@ -96,9 +101,18 @@
   }
 }
 
+.poster--selected--first {
+  &::after {
+    background-image: url("./img/card-border-selected.svg");
+  }
+
+  & .poster__weight {
+    background-color: #d91667;
+  }
+}
+
 .poster--disabled {
   cursor: auto;
-  background-image: url("./img/card-background.svg");
 
   &::before {
     opacity: 0.5;
@@ -109,16 +123,6 @@
   }
 
   & .poster__weight {
-    background-color: #b3b3b3;
-  }
-
-  &:hover::after,
-  &:focus::after {
-    background-image: url("./img/card-border-disabled.svg");
-  }
-
-  &:hover .poster__weight,
-  &:focus .poster__weight {
     background-color: $col-disabled;
   }
 
