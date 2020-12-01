@@ -45,7 +45,8 @@ gulp.task("copy", function () {
   ], {
       base: "src"
   })
-  .pipe(gulp.dest("markup"));
+  .pipe(gulp.dest("markup"))
+  .pipe(gulp.dest("public"));
 });
 
 gulp.task("refresh", function (done) {
@@ -69,6 +70,9 @@ gulp.task("server", function () {
 });
 
 gulp.task("clean", function () {
+  del("public/fonts");
+  del("public/img");
+  del("public/style.css");
   return del("markup");
 });
 
