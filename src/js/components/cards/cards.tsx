@@ -8,6 +8,8 @@ interface Props {
 
 const Cards = (props: Props):React.ReactElement => {
   const {title} = props;
+  const goods = React.useContext(GoodsContext);
+
   return (
     <section className="main-page__cards cards">
       <h1 className="cards__title title">{title}</h1>

@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import Cards from "../cards/cards"
+import Cards from "../cards/cards";
 
 const App = ():React.ReactElement => {
   return (
