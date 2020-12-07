@@ -2,10 +2,9 @@ import * as React from "react";
 import * as ReactDOM from "react-dom";
 
 import {goods} from "./mock";
+import {GoodsContext} from "./goods-context";
 
 import App from "./components/app/app";
-
-const GoodsContext = React.createContext(null);
 
 ReactDOM.render(
     <GoodsContext.Provider value={goods}>

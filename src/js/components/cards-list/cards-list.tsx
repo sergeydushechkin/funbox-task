@@ -1,6 +1,13 @@
 import * as React from "react";
+import {Goods} from "../../types";
 
-const CardsList = ():React.ReactElement => {
+interface Props {
+  goods: Array<Goods>;
+}
+
+const CardsList = (props: Props):React.ReactElement => {
+  const {goods} = props;
+
   return (
     <ul className="cards__list">
       <li className="cards__item">
@@ -14,7 +21,7 @@ const CardsList = ():React.ReactElement => {
               <h2 className="poster__title">
                 Нямушка
               </h2>
-              <p className="poster__taste">с фуа-гра</p>
+              <p className="poster__taste">{goods[0].title}</p>
               <ul className="poster__consist consist">
                 <li className="consist__item"><b>10</b> порций</li>
                 <li className="consist__item">мышь в подарок</li>

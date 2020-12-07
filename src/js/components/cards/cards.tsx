@@ -1,5 +1,6 @@
 import * as React from "react";
 
+import {GoodsContext} from "../../goods-context";
 import CardsList from "../cards-list/cards-list";
 
 interface Props {
@@ -13,7 +14,7 @@ const Cards = (props: Props):React.ReactElement => {
   return (
     <section className="main-page__cards cards">
       <h1 className="cards__title title">{title}</h1>
-      <CardsList />
+      <CardsList goods={goods}/>
     </section>
   );
 };
