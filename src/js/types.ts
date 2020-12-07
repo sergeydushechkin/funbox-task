@@ -3,7 +3,7 @@ interface Consist {
   value: number;
 }
 
-interface Goods {
+interface Item {
   id: number;
   title: string;
   description: string;
@@ -12,4 +12,4 @@ interface Goods {
   consist: Array<Consist>
 }
 
-export {Goods};
+export {Item};

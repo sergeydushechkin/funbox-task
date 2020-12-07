@@ -175,6 +175,7 @@ exports[`Render CardsList component 1`] = `
     >
       <div
         className="card__poster poster poster--disabled"
+        tabIndex={-1}
       >
         <div
           className="poster__content"

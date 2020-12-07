@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Render CardsList component 1`] = `
+exports[`Render Cards component 1`] = `
 <section
   className="main-page__cards cards"
 >
@@ -183,6 +183,7 @@ exports[`Render CardsList component 1`] = `
       >
         <div
           className="card__poster poster poster--disabled"
+          tabIndex={-1}
         >
           <div
             className="poster__content"

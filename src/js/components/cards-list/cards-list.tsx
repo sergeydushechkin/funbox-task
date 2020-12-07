@@ -1,8 +1,8 @@
 import * as React from "react";
-import {Goods} from "../../types";
+import {Item} from "../../types";
 
 interface Props {
-  goods: Array<Goods>;
+  goods: Array<Item>;
 }
 
 const CardsList = (props: Props):React.ReactElement => {
@@ -62,7 +62,7 @@ const CardsList = (props: Props):React.ReactElement => {
       </li>
       <li className="cards__item">
         <article className="cards_card card card--disabled">
-          <div className="card__poster poster poster--disabled">
+          <div className="card__poster poster poster--disabled" tabIndex={-1}>
             <div className="poster__content">
               <p className="poster__text">
                 <span className="poster__phrase1">Сказочное заморское яство</span>
