@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Render CardStatus component 1`] = `
+<p
+  className="card__status card__status--not-available"
+>
+  Печалька, с курой закончился.
+</p>
+`;
