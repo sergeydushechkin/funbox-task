@@ -75,6 +75,7 @@ exports[`Render Card component 1`] = `
     <a
       className="card__link"
       href=""
+      onClick={[Function]}
     >
       купи.
     </a>

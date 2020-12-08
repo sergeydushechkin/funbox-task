@@ -7,7 +7,10 @@ import {goods} from "../../mock";
 it(`Render Card component`, () => {
   const cardElement = renderer
     .create(
-        <Card item={goods[0]} status={true}/>
+        <Card
+          item={goods[0]}
+          isActive={false}
+        />
     )
     .toJSON();
 

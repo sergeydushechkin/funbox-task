@@ -2,18 +2,30 @@ import * as React from "react";
 
 import {Item} from "../../types";
 
+import CardStatus from "../card-status/card-status";
+
 interface Props {
   item: Item;
-  status: boolean;
+  isActive: boolean;
 }
 
 const Card = (props: Props):React.ReactElement => {
-  const {item, status} = props;
+  const {item, isActive} = props;
   const {title, weight, description, amount, consist} = item;
 
+  let cardStateClass = ``;
+  let posterStateClass = ``;
+  if (amount) {
+    posterStateClass = isActive ? ` poster--selected` : ` poster--unselected`;
+    cardStateClass = isActive ? ` card--selected` : ``;
+  } else {
+    posterStateClass = ` poster--disabled`;
+    cardStateClass = ` card--disabled`;
+  }
+
   return (
-    <article className="cards_card card">
-      <div className="card__poster poster poster--unselected" tabIndex={amount ? 1 : -1}>
+    <article className={`cards_card card${cardStateClass}`}>
+      <div className={`card__poster poster${posterStateClass}`} tabIndex={amount ? 1 : -1}>
         <div className="poster__content">
           <p className="poster__text">
             <span className="poster__phrase1">Сказочное заморское яство</span>
@@ -24,8 +36,15 @@ const Card = (props: Props):React.ReactElement => {
           </h2>
           <p className="poster__taste">{title}</p>
           <ul className="poster__consist consist">
-            <li className="consist__item"><b>10</b> порций</li>
-            <li className="consist__item">мышь в подарок</li>
+            {
+              consist.map((it) => {
+                return (
+                  <li key={it.name} className="consist__item">
+                    {it.value ? <><b>{it.value}</b>{` ${it.name}`}</> : it.name}
+                  </li>
+                );
+              })
+            }
           </ul>
         </div>
         <div className="poster__weight weight">
@@ -33,7 +52,13 @@ const Card = (props: Props):React.ReactElement => {
           <span className="weight__measure">кг</span>
         </div>
       </div>
-      <p className="card__status">Чего сидишь? Порадуй котэ, <a className="card__link" href="">купи.</a></p>
+      <CardStatus
+        isAvailable={!!amount}
+        title={title}
+        description={description}
+        isActive={false}
+        onClick={() => { /* noop*/ }}
+      />
     </article>
   );
 };
