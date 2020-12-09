@@ -10,6 +10,7 @@ it(`Render Card component`, () => {
         <Card
           item={goods[0]}
           isActive={false}
+          onClick={() => { /* noop */ }}
         />
     )
     .toJSON();

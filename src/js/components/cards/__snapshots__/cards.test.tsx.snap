@@ -20,6 +20,7 @@ exports[`Render Cards component 1`] = `
       >
         <div
           className="card__poster poster poster--unselected"
+          onClick={[Function]}
           tabIndex={1}
         >
           <div
@@ -89,6 +90,7 @@ exports[`Render Cards component 1`] = `
           <a
             className="card__link"
             href=""
+            onClick={[Function]}
           >
             купи.
           </a>
@@ -103,6 +105,7 @@ exports[`Render Cards component 1`] = `
       >
         <div
           className="card__poster poster poster--selected"
+          onClick={[Function]}
           tabIndex={1}
         >
           <div
@@ -183,6 +186,7 @@ exports[`Render Cards component 1`] = `
       >
         <div
           className="card__poster poster poster--disabled"
+          onClick={[Function]}
           tabIndex={-1}
         >
           <div

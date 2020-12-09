@@ -6,6 +6,7 @@ exports[`Render Card component 1`] = `
 >
   <div
     className="card__poster poster poster--unselected"
+    onClick={[Function]}
     tabIndex={1}
   >
     <div
