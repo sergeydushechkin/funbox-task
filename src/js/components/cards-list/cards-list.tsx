@@ -1,5 +1,7 @@
 import * as React from "react";
 import {Item} from "../../types";
+import {changeArrayItem} from "../../utils";
+import Card from "../card/card";
 
 interface Props {
   goods: Array<Item>;
@@ -7,85 +9,28 @@ interface Props {
 
 const CardsList = (props: Props):React.ReactElement => {
   const {goods} = props;
+  const [activeCards, setActiveCards] = React.useState([goods[1]]);
+
+  const handleCardClick = React.useCallback((evt: React.MouseEvent, item: Item) => {
+    evt.preventDefault();
+    setActiveCards(changeArrayItem(activeCards, item));
+  }, [activeCards]);
 
   return (
     <ul className="cards__list">
-      <li className="cards__item">
-        <article className="cards_card card">
-          <div className="card__poster poster poster--unselected" tabIndex={1}>
-            <div className="poster__content">
-              <p className="poster__text">
-                <span className="poster__phrase1">Сказочное заморское яство</span>
-                <span className="poster__phrase2">Котэ не одобряет?</span>
-              </p>
-              <h2 className="poster__title">
-                Нямушка
-              </h2>
-              <p className="poster__taste">{goods[0].title}</p>
-              <ul className="poster__consist consist">
-                <li className="consist__item"><b>10</b> порций</li>
-                <li className="consist__item">мышь в подарок</li>
-              </ul>
-            </div>
-            <div className="poster__weight weight">
-              <span className="weight__value">0,5</span>
-              <span className="weight__measure">кг</span>
-            </div>
-          </div>
-          <p className="card__status">Чего сидишь? Порадуй котэ, <a className="card__link" href="">купи.</a></p>
-        </article>
-      </li>
-      <li className="cards__item">
-        <article className="cards_card card card--selected">
-          <div className="card__poster poster poster--selected" tabIndex={1}>
-            <div className="poster__content">
-              <p className="poster__text">
-                <span className="poster__phrase1">Сказочное заморское яство</span>
-                <span className="poster__phrase2">Котэ не одобряет?</span>
-              </p>
-              <h2 className="poster__title">
-                Нямушка
-              </h2>
-              <p className="poster__taste">с рыбой</p>
-              <ul className="poster__consist consist">
-                <li className="consist__item"><b>40</b> порций</li>
-                <li className="consist__item"><b>2</b> мыши в подарок</li>
-              </ul>
-            </div>
-            <div className="poster__weight weight">
-              <span className="weight__value">2</span>
-              <span className="weight__measure">кг</span>
-            </div>
-          </div>
-          <p className="card__status">Головы щучьи с чесноком да свежайшая сёмгушка.</p>
-        </article>
-      </li>
-      <li className="cards__item">
-        <article className="cards_card card card--disabled">
-          <div className="card__poster poster poster--disabled" tabIndex={-1}>
-            <div className="poster__content">
-              <p className="poster__text">
-                <span className="poster__phrase1">Сказочное заморское яство</span>
-                <span className="poster__phrase2">Котэ не одобряет?</span>
-              </p>
-              <h2 className="poster__title">
-                Нямушка
-              </h2>
-              <p className="poster__taste">с курой</p>
-              <ul className="poster__consist consist">
-                <li className="consist__item"><b>100</b> порций</li>
-                <li className="consist__item"><b>5</b> мышей в подарок</li>
-                <li className="consist__item">заказчик доволен</li>
-              </ul>
-            </div>
-            <div className="poster__weight weight">
-              <span className="weight__value">5</span>
-              <span className="weight__measure">кг</span>
-            </div>
-          </div>
-          <p className="card__status card__status--not-available">Печалька, с курой закончился.</p>
-        </article>
-      </li>
+      {
+        goods.map((item) => {
+          return (
+            <li key={item.id} className="cards__item">
+              <Card
+                item={item}
+                isActive={activeCards.findIndex((it) => it.id === item.id) !== -1}
+                onClick={handleCardClick}
+              />
+            </li>
+          );
+        })
+      }
     </ul>
   );
 };
