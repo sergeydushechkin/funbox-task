@@ -5,7 +5,7 @@ interface Props {
   title: string;
   description: string;
   isActive: boolean;
-  onClick: () => void;
+  onClick: (evt: React.MouseEvent) => void;
 }
 
 const CardStatus = (props: Props):React.ReactElement => {

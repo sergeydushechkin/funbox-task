@@ -7,14 +7,16 @@ import CardStatus from "../card-status/card-status";
 interface Props {
   item: Item;
   isActive: boolean;
+  onClick: (evt: React.MouseEvent, item: Item) => void;
 }
 
 const Card = (props: Props):React.ReactElement => {
-  const {item, isActive} = props;
+  const {item, isActive, onClick} = props;
   const {title, weight, description, amount, consist} = item;
 
   let cardStateClass = ``;
   let posterStateClass = ``;
+
   if (amount) {
     posterStateClass = isActive ? ` poster--selected` : ` poster--unselected`;
     cardStateClass = isActive ? ` card--selected` : ``;
@@ -25,7 +27,7 @@ const Card = (props: Props):React.ReactElement => {
 
   return (
     <article className={`cards_card card${cardStateClass}`}>
-      <div className={`card__poster poster${posterStateClass}`} tabIndex={amount ? 1 : -1}>
+      <div onClick={(evt) => onClick(evt, item)} className={`card__poster poster${posterStateClass}`} tabIndex={amount ? 1 : -1}>
         <div className="poster__content">
           <p className="poster__text">
             <span className="poster__phrase1">Сказочное заморское яство</span>
@@ -56,8 +58,8 @@ const Card = (props: Props):React.ReactElement => {
         isAvailable={!!amount}
         title={title}
         description={description}
-        isActive={false}
-        onClick={() => { /* noop*/ }}
+        isActive={isActive}
+        onClick={(evt: React.MouseEvent) => onClick(evt, item)}
       />
     </article>
   );
