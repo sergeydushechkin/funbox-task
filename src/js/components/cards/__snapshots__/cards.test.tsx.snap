@@ -21,6 +21,7 @@ exports[`Render Cards component 1`] = `
         <div
           className="card__poster poster poster--unselected"
           onClick={[Function]}
+          onPointerLeave={null}
           tabIndex={1}
         >
           <div
@@ -106,6 +107,7 @@ exports[`Render Cards component 1`] = `
         <div
           className="card__poster poster poster--selected"
           onClick={[Function]}
+          onPointerLeave={null}
           tabIndex={1}
         >
           <div
@@ -186,7 +188,8 @@ exports[`Render Cards component 1`] = `
       >
         <div
           className="card__poster poster poster--disabled"
-          onClick={[Function]}
+          onClick={null}
+          onPointerLeave={null}
           tabIndex={-1}
         >
           <div

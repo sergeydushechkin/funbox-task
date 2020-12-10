@@ -13,21 +13,37 @@ interface Props {
 const Card = (props: Props):React.ReactElement => {
   const {item, isActive, onClick} = props;
   const {title, weight, description, amount, consist} = item;
+  const [isFirstSelect, setIsFirstSelect] = React.useState(false);
 
   let cardStateClass = ``;
   let posterStateClass = ``;
 
   if (amount) {
-    posterStateClass = isActive ? ` poster--selected` : ` poster--unselected`;
-    cardStateClass = isActive ? ` card--selected` : ``;
+    if (isActive) {
+      posterStateClass = isFirstSelect ? ` poster--selected-first` : ` poster--selected`;
+      cardStateClass = ` card--selected`;
+    } else {
+      posterStateClass = ` poster--unselected`;
+    }
   } else {
     posterStateClass = ` poster--disabled`;
     cardStateClass = ` card--disabled`;
   }
 
+  const handlePointerLeave = () => {
+    setIsFirstSelect(false);
+  };
+
+  const handlePosterClick = (evt) => {
+    if (!isActive) {
+      setIsFirstSelect(true);
+    }
+    onClick(evt, item);
+  };
+
   return (
     <article className={`cards_card card${cardStateClass}`}>
-      <div onClick={(evt) => onClick(evt, item)} className={`card__poster poster${posterStateClass}`} tabIndex={amount ? 1 : -1}>
+      <div onPointerLeave={isFirstSelect ? handlePointerLeave : null} onClick={amount ? handlePosterClick : null} className={`card__poster poster${posterStateClass}`} tabIndex={amount ? 1 : -1}>
         <div className="poster__content">
           <p className="poster__text">
             <span className="poster__phrase1">Сказочное заморское яство</span>
