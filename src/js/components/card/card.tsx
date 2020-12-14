@@ -30,11 +30,11 @@ const Card = (props: Props):React.ReactElement => {
     cardStateClass = ` card--disabled`;
   }
 
-  const handlePointerLeave = () => {
+  const handlePointerLeave = ():void => {
     setIsFirstSelect(false);
   };
 
-  const handlePosterClick = (evt) => {
+  const handlePosterClick = (evt):void => {
     if (!isActive) {
       setIsFirstSelect(true);
     }

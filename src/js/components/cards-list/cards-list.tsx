@@ -11,7 +11,7 @@ const CardsList = (props: Props):React.ReactElement => {
   const {goods} = props;
   const [activeCards, setActiveCards] = React.useState([goods[1]]);
 
-  const handleCardClick = React.useCallback((evt: React.MouseEvent, item: Item) => {
+  const handleCardClick = React.useCallback((evt: React.MouseEvent, item: Item):void => {
     evt.preventDefault();
     setActiveCards(changeArrayItem(activeCards, item));
   }, [activeCards]);
