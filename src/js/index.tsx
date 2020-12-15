@@ -1,3 +1,4 @@
+import "core-js/features/array/virtual/find-index";
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 
