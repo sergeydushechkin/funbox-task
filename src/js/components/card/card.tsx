@@ -14,6 +14,7 @@ const Card = (props: Props):React.ReactElement => {
   const {item, isActive, onClick} = props;
   const {title, weight, description, amount, consist} = item;
   const [isFirstSelect, setIsFirstSelect] = React.useState(false);
+  const posterRef = React.useRef(null);
 
   let cardStateClass = ``;
   let posterStateClass = ``;
@@ -32,6 +33,7 @@ const Card = (props: Props):React.ReactElement => {
 
   const handlePointerLeave = ():void => {
     setIsFirstSelect(false);
+    posterRef.current.blur();
   };
 
   const handlePosterClick = (evt):void => {
@@ -43,7 +45,7 @@ const Card = (props: Props):React.ReactElement => {
 
   return (
     <article className={`cards_card card${cardStateClass}`}>
-      <div onPointerLeave={isFirstSelect ? handlePointerLeave : null} onClick={amount ? handlePosterClick : null} className={`card__poster poster${posterStateClass}`} tabIndex={amount ? 1 : -1}>
+      <div ref={posterRef} onPointerLeave={isFirstSelect ? handlePointerLeave : null} onClick={amount ? handlePosterClick : null} className={`card__poster poster${posterStateClass}`} tabIndex={amount ? 1 : -1}>
         <div className="poster__content">
           <p className="poster__text">
             <span className="poster__phrase1">Сказочное заморское яство</span>
