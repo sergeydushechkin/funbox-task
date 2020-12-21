@@ -138,6 +138,10 @@
   & .poster__consist {
     color: $col-disabled;
   }
+
+  &:focus {
+    outline: none;
+  }
 }
 
 .poster__content {
