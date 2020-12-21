@@ -1,6 +1,11 @@
 import {Item} from "../types";
 import {goods} from "../mock";
 
+interface Action {
+  type: string;
+  payload: string | number;
+}
+
 interface State {
   goods: Array<Item>;
 }
@@ -13,7 +18,7 @@ const ActionType = {
   LOAD_GOODS: `LOAD_GOODS`,
 };
 
-const reducer = (state = initialState, action: string):State => {
+const reducer = (state = initialState, action: Action):State => {
   switch (action.type) {
     case ActionType.LOAD_GOODS:
       return state;
@@ -22,4 +27,4 @@ const reducer = (state = initialState, action: string):State => {
   return state;
 };
 
-export {reducer};
+export {reducer, State};

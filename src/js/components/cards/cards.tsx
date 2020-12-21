@@ -1,6 +1,7 @@
 import * as React from "react";
+import {useSelector} from "react-redux";
 
-import {GoodsContext} from "../../goods-context";
+import {getGoods} from "../../reducer/selectors";
 import CardsList from "../cards-list/cards-list";
 
 interface Props {
@@ -9,7 +10,7 @@ interface Props {
 
 const Cards = (props: Props):React.ReactElement => {
   const {title} = props;
-  const goods = React.useContext(GoodsContext);
+  const goods = useSelector(getGoods);
 
   return (
     <section className="main-page__cards cards">
