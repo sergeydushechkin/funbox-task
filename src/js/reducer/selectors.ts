@@ -1,8 +1,12 @@
 import {Item} from "../types";
 import {State} from "./reducer";
 
-const getGoods = (state:State):Array<Item> => {
+const getGoods = (state: State):Array<Item> => {
   return state.goods;
 };
 
-export {getGoods};
+const getSelectedGoods = (state: State):Array<Item> => {
+  return state.selectedGoods;
+};
+
+export {getGoods, getSelectedGoods};
