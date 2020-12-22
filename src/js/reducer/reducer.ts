@@ -11,20 +11,26 @@ interface State {
 }
 
 const initialState = {
-  goods,
+  goods: [],
 };
 
 const ActionType = {
   LOAD_GOODS: `LOAD_GOODS`,
+const ActionCreator = {
+  loadGoods: (data: Array<Item>):Action => ({
+    type: ActionType.LOAD_GOODS,
+    payload: data,
+  }),
 };
 
 const reducer = (state = initialState, action: Action):State => {
   switch (action.type) {
     case ActionType.LOAD_GOODS:
-      return state;
+      return Object.assign({}, state, {goods: action.payload});
+      break;
   }
 
   return state;
 };
 
-export {reducer, State};
+export {reducer, ActionCreator, State};
