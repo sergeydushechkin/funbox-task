@@ -1,5 +1,7 @@
 .main-page {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   max-width: 1280px;
   height: 100vh;
@@ -10,5 +12,5 @@
 
 .main-page__cards {
   width: 100%;
-  margin: auto;
+  margin: 0;
 }
