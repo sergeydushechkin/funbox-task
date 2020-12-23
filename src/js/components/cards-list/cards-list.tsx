@@ -1,6 +1,11 @@
 import * as React from "react";
+import {useDispatch, useSelector} from "react-redux";
+
 import {Item} from "../../types";
 import {changeArrayItem} from "../../utils";
+
+import {ActionCreator} from "../../reducer/reducer";
+import {getSelectedGoods} from "../../reducer/selectors";
 import Card from "../card/card";
 
 interface Props {
@@ -9,12 +14,13 @@ interface Props {
 
 const CardsList = (props: Props):React.ReactElement => {
   const {goods} = props;
-  const [activeCards, setActiveCards] = React.useState([goods[1]]);
+  const dispatch = useDispatch();
+  const selectedGoods = useSelector(getSelectedGoods);
 
   const handleCardClick = React.useCallback((evt: React.MouseEvent, item: Item):void => {
     evt.preventDefault();
-    setActiveCards(changeArrayItem(activeCards, item));
-  }, [activeCards]);
+    dispatch(ActionCreator.changeSelectedGoods(changeArrayItem(selectedGoods, item)));
+  }, [dispatch, selectedGoods]);
 
   return (
     <ul className="cards__list">
@@ -24,7 +30,7 @@ const CardsList = (props: Props):React.ReactElement => {
             <li key={item.id} className="cards__item">
               <Card
                 item={item}
-                isActive={activeCards.findIndex((it) => it.id === item.id) !== -1}
+                isActive={selectedGoods.findIndex((it) => it.id === item.id) !== -1}
                 onClick={handleCardClick}
               />
             </li>

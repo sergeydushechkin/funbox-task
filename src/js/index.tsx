@@ -14,6 +14,7 @@ const store = createStore(
 );
 
 store.dispatch(ActionCreator.loadGoods(goods));
+store.dispatch(ActionCreator.changeSelectedGoods([goods[1]]));
 
 ReactDOM.render(
     <Provider store={store}>
