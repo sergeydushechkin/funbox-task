@@ -2,7 +2,7 @@ import * as React from "react";
 import {useDispatch, useSelector} from "react-redux";
 
 import {Item} from "../../types";
-import {changeArrayItem} from "../../utils";
+import {changeArrayItem} from "../../utils/utils";
 
 import {ActionCreator} from "../../reducer/reducer";
 import {getSelectedGoods} from "../../reducer/selectors";

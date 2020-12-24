@@ -1,4 +1,4 @@
-import {Item} from "./types";
+import {Item} from "../types";
 
 const changeArrayItem = (items: Array<Item>, item: Item):Array<Item> => {
   const index = items.findIndex((it) => it.id === item.id);
