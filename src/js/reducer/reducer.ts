@@ -10,7 +10,7 @@ interface State {
   selectedGoods: Array<Item>,
 }
 
-const initialState = {
+const initialState:State = {
   goods: [],
   selectedGoods: [],
 };
@@ -44,4 +44,4 @@ const reducer = (state = initialState, action: Action):State => {
   return state;
 };
 
-export {reducer, ActionCreator, State};
+export {reducer, ActionCreator, ActionType, State};
