@@ -2,7 +2,7 @@ import * as React from "react";
 import {configure, shallow} from "enzyme";
 import * as Adapter from "enzyme-adapter-react-16";
 
-import Card from "./card";
+import Poster from "./Poster";
 
 configure({
   adapter: new Adapter(),
@@ -48,11 +48,11 @@ const testZeroItem = {
   ]
 };
 
-it(`Test Card component items clicks and return value`, () => {
+it(`Test Poster component items clicks and return value`, () => {
   const onUserClick = jest.fn();
 
-  const CardWrap = shallow(
-      <Card
+  const PosterWrap = shallow(
+      <Poster
         item={testItem}
         isActive={false}
         onClick={onUserClick}
@@ -64,7 +64,7 @@ it(`Test Card component items clicks and return value`, () => {
       }
   );
 
-  const poster = CardWrap.find(`.card__poster`);
+  const poster = PosterWrap.find(`.poster`);
 
   poster.simulate(`click`, {
     preventDefault: () => { /* noop */ }
@@ -73,11 +73,11 @@ it(`Test Card component items clicks and return value`, () => {
   expect(onUserClick).toHaveBeenCalledTimes(1);
 });
 
-it(`Test Card component with zero amount items clicks and not return value`, () => {
+it(`Test Poster component with zero amount items clicks and not return value`, () => {
   const onUserClick = jest.fn();
 
-  const CardWrap = shallow(
-      <Card
+  const PosterWrap = shallow(
+      <Poster
         item={testZeroItem}
         isActive={false}
         onClick={onUserClick}
@@ -89,7 +89,7 @@ it(`Test Card component with zero amount items clicks and not return value`, () 
       }
   );
 
-  const poster = CardWrap.find(`.card__poster`);
+  const poster = PosterWrap.find(`.poster`);
 
   poster.simulate(`click`, {
     preventDefault: () => { /* noop */ }
