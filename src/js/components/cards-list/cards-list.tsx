@@ -12,7 +12,7 @@ interface Props {
   goods: Array<Item>;
 }
 
-const CardsList = (props: Props):React.ReactElement => {
+const CardsList:React.FunctionComponent<Props> = (props: Props) => {
   const {goods} = props;
   const dispatch = useDispatch();
   const selectedGoods = useSelector(getSelectedGoods);

@@ -8,7 +8,7 @@ interface Props {
   title: string
 }
 
-const Cards = (props: Props):React.ReactElement => {
+const Cards:React.FunctionComponent<Props> = (props: Props) => {
   const {title} = props;
   const goods = useSelector(getGoods);
 

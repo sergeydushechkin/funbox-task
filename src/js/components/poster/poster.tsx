@@ -8,7 +8,7 @@ interface Props {
   onClick: (evt: React.MouseEvent, item: Item) => void;
 }
 
-const Poster = (props: Props):React.ReactElement => {
+const Poster:React.FunctionComponent<Props> = (props: Props) => {
   const {item, isActive, onClick} = props;
   const {title, weight, amount, consist} = item;
   const [isFirstSelect, setIsFirstSelect] = React.useState(false);

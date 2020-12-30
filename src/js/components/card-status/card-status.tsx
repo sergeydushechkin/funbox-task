@@ -8,7 +8,7 @@ interface Props {
   onClick: (evt: React.MouseEvent) => void;
 }
 
-const CardStatus = (props: Props):React.ReactElement => {
+const CardStatus:React.FunctionComponent<Props> = (props: Props) => {
   const {isAvailable, title, description, isActive, onClick} = props;
 
   let statusText = <></>;
